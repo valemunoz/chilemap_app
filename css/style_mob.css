@@ -1,0 +1,214 @@
+    	#map
+    	{
+    		width:100% !important;
+    		/*height:450px !important;   		*/
+				height:95% !important;
+    	}
+
+  	
+#tit_descrip
+{
+	border:2px solid #daeaf0;
+	width:80%;
+	height:auto;
+	font-size: 9px;
+	color:#777777;
+	margin-top:2px;
+	line-height:1.5em;
+	margin-left:10px;
+
+}
+#titulo1
+{
+	font-size:12px;
+	font-weight:bold;
+	color:#4896B3;
+	
+}
+#titulo2
+{
+	font-size:11px;
+	font-weight:normal;
+
+	
+}
+#titulo3
+{
+	font-size:10px;
+	font-weight:normal;
+	
+}
+#titulo4
+{
+	font-size:9px;
+	font-weight:normal;
+	
+}
+#titulo5
+{
+	font-size:8px;
+	font-weight:normal;
+	
+}
+
+#cont_pop
+{
+	
+	margin-left:10px;
+	margin-right:10px;
+}
+#botonera {
+
+-webkit-border-top-left-radius: 6px;
+-moz-border-radius-topleft: 6px;
+border-top-left-radius: 6px;
+-webkit-border-top-right-radius: 6px;
+-moz-border-radius-topright: 6px;
+border-top-right-radius: 6px;
+-webkit-border-bottom-right-radius: 6px;
+-moz-border-radius-bottomright: 6px;
+border-bottom-right-radius: 6px;
+-webkit-border-bottom-left-radius: 6px;
+-moz-border-radius-bottomleft: 6px;
+border-bottom-left-radius: 6px;
+text-indent: 0;
+border-bottom: 1px solid #fff !important; background:none; border-left:1px solid #E7E7E7 !important; border-right:1px solid #E7E7E7 !important;border-top: 1px solid #B3B3B3 !important;
+display: inline-block;
+width: 110px;margin-top: 7px;
+cursor:pointer;
+margin-left: 76px;
+margin-bottom: 0px;padding-top: 4px;
+padding-bottom: 4px;
+
+}
+.img_boton
+{
+	width: 18px;
+height: 18px;
+cursor: pointer;
+margin-left: 5px;
+	
+}
+.span_nota
+{
+	font-weight: normal;
+	font-size:8px;
+	color:#C9C9C9;
+}
+#output
+{
+	display:none;
+}
+#text_sup
+{
+	font-size:55%;
+}
+#text_supIz
+{
+	font-size:55%;
+}
+
+#text_inf
+{
+	text-align:center;
+	font-size:55%;
+}
+#cont_registro
+{
+	margin-left:20px;
+	margin-right:20px;
+	margin-top:10px;
+}
+
+.msg_error
+{
+	font-size:13px;
+	font-weight:normal;
+	color:#A0A0A0;
+	border:1px #DBDBDB solid;
+	line-height:1,5em;
+	text-align:center;
+	
+}
+#text_supIz
+{
+	float:left !important;
+}
+.txt_lista
+{
+	
+	color:#797979 !important;
+}
+#list_registros
+{
+	height:300px !important;
+	overflow:auto;
+	
+	
+}
+#mappage
+{
+	background-color:#3388CC !important;
+}
+#fi_empresa
+{
+	color:#797979 !important;
+	font-weight:normal !important;
+}
+#ft_empresa
+{
+	color:#797979 !important;
+	font-weight:normal !important;
+}
+#dt_empresa
+{
+	color:#797979 !important;
+	font-weight:normal !important;
+}
+#doc_empresa
+{
+	color:#797979 !important;
+	font-weight:normal !important;
+}
+
+.txt_lista_activo
+{
+		background-color:#E5E5E5 !important;
+}
+.txt_lista_visita
+{
+		background-color:#92C600 !important;
+		color:#FFFFFF !important;
+		font-weight:normal !important;
+}
+#cont_agenda
+{
+	padding:5px;
+	text-align:left;
+	margin-left:10px;
+	
+}
+#list_registros_agenda
+{
+	height:200px !important;
+	
+	overflow:auto;
+	
+	
+}
+.txt_pop
+{
+	font-weight:normal !important;
+	font-size:90% !important;
+	color:#9D9D9D;
+}
+.txt_header
+{
+	font-weight:bold !important;
+	
+}
+.txt_cont
+{
+	font-weight:normal !important;
+	
+}
