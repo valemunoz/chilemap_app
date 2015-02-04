@@ -65,6 +65,7 @@
     <icon src="icon.png" />     
     <splash src="splash.png" /> 
     <gap:splash src="res/screen/android/splash.png"       gap:platform="android" />
+    <gap:splash src="res/screen/ios/splash.png"         gap:platform="ios" />
 
      <!--gap:splash src="res/screen/android/screen-ldpi-portrait.png"       gap:platform="android" gap:qualifier="port-ldpi" />
     <gap:splash src="res/screen/android/screen-mdpi-portrait.png"       gap:platform="android" gap:qualifier="port-mdpi" />
