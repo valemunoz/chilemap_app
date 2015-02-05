@@ -618,19 +618,19 @@ function getLoginStatus() {
                                   if (response.status == 'connected') {
                                   	alert('logged in');
                                   	
-                                  	facebookConnectPlugin.showDialog({
+                                  	/*facebookConnectPlugin.showDialog({
     																	method: "feed",
     																	link: ''+CM_link+'',
     																	caption: CM_caption
-																		}, successFace, failureFace);
+																		}, successFace, failureFace);*/
 																		
                                   } else {
                                   	alert('not logged in');
                                   	
-                                  	facebookConnectPlugin.login(["basic_info"],
+                                  	/*facebookConnectPlugin.login(["basic_info"],
     																		fbLoginSuccess,
     																			function (error) { alert("" + error) }
-																		);
+																		);*/
                                   }
                 });
             }
