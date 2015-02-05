@@ -620,7 +620,8 @@ function getLoginStatus(CM_link) {
 //                                  alert(response.authResponse.userID);
                                   facebookConnectPlugin.api(response.authResponse.userID+"/?fields=id,name", [],
     function (result) {
-        alert("Result: " + JSON.stringify(result));
+    	FACE_NAME=result.name;
+        //alert("Result: " + JSON.stringify(result));
         /* alerts:
             {
                 "id": "000000123456789",
@@ -632,18 +633,32 @@ function getLoginStatus(CM_link) {
         alert("Failed: " + error);
     });
                                   
-                                  /*facebookConnectPlugin.showDialog({
+                                  facebookConnectPlugin.showDialog({
 																	    method: "feed",
 																	    link: ''+CM_link+'',
 																	     picture: ""+CM_path+"/"+CM_logo2+"",
 																	      caption: CM_caption,
 																	      description: FACE_NAME+' compartio este link!'  
-																	}, successFace, failureFace);*/
+																	}, successFace, failureFace);
                                   
                                   } else {
                                   //alert('not logged in');
                                   facebookConnectPlugin.login(["public_profile"],
     																function (){
+    																	facebookConnectPlugin.api(response.authResponse.userID+"/?fields=id,name", [],
+    function (result) {
+    	FACE_NAME=result.name;
+        //alert("Result: " + JSON.stringify(result));
+        /* alerts:
+            {
+                "id": "000000123456789",
+                "email": "myemail@example.com"
+            }
+        */
+    },
+    function (error) {
+        alert("Failed: " + error);
+    });
     																	
     																	facebookConnectPlugin.showDialog({
 																	    method: "feed",
