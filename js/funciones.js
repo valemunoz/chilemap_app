@@ -77,10 +77,30 @@ function deviceListo()
 					}
 			);
 			
-			
+			facebookConnectPlugin.browserInit('171716159685522');
+			facebookConnectPlugin.login(
+    ["publish_stream"], 
+    fbLoginSuccess, 
+    function (error) { 
+        alert("" + error);
+    }
+);
+
 			loadServiciosPanel();
 			
 			
+}
+var fbLoginSuccess = function (userData) {
+	alert("paso");
+    facebookConnectPlugin.api('/me/friends?fields=picture,name', ["basic_info", "user_friends"],
+        function (result) {
+            alert("Result: " + JSON.stringify(result));
+        }, 
+        function (error) { 
+            alert("Failed: " + error);
+        }
+    );
+
 }
 function deviceListo2()
 {
