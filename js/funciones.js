@@ -616,23 +616,25 @@ function compartirFace(CM_link,tipo)
 function getLoginStatus() {
                 FB.getLoginStatus(function(response) {
                                   if (response.status == 'connected') {
-                                  alert('logged in');
-                                  facebookConnectPlugin.showDialog({
-    method: "feed",
-    link: ''+CM_link+'',
-    caption: CM_caption
-}, successFace, failureFace);
+                                  	alert('logged in');
+                                  	
+                                  	facebookConnectPlugin.showDialog({
+    																	method: "feed",
+    																	link: ''+CM_link+'',
+    																	caption: CM_caption
+																		}, successFace, failureFace);
+																		
                                   } else {
-                                  facebookConnectPlugin.login(["basic_info"],
-    			fbLoginSuccess,
-    				function (error) { alert("" + error) }
-				);
-			
-					}
-			);
+                                  	alert('not logged in');
+                                  	
+                                  	facebookConnectPlugin.login(["basic_info"],
+    																		fbLoginSuccess,
+    																			function (error) { alert("" + error) }
+																		);
                                   }
-                                  });
+                });
             }
+
 function successFace()
 {
 	alert("paso");
