@@ -613,19 +613,32 @@ function compartirFace(CM_link,tipo)
 function getLoginStatus(CM_link) {
 	
                 facebookConnectPlugin.getLoginStatus(function(response) {
-                	alert("Result: " + JSON.stringify(response));
+                	//alert("Result: " + JSON.stringify(response));
                                   if (response.status == 'connected') {
                                   	
                                   		
-                                  
-                                  //alert('logged in');
-                                  facebookConnectPlugin.showDialog({
+                                  alert(response.authResponse.userID);
+                                  facebookConnectPlugin.api(response.authResponse.userID+"/?fields=id,email", ["user_birthday"],
+    															function (result) {
+    															    alert("Result: " + JSON.stringify(result));
+    															    /* alerts:
+    															        {
+    															            "id": "000000123456789",
+    															            "email": "myemail@example.com"
+    															        }
+    															    */
+    															},
+    															function (error) {
+    															    alert("Failed: " + error);
+    															});
+    
+                                  /*facebookConnectPlugin.showDialog({
 																	    method: "feed",
 																	    link: ''+CM_link+'',
 																	     picture: ""+CM_path+"/"+CM_logo2+"",
 																	      caption: CM_caption,
 																	      description: FACE_NAME+' compartio este link!'  
-																	}, successFace, failureFace);
+																	}, successFace, failureFace);*/
                                   
                                   } else {
                                   //alert('not logged in');
