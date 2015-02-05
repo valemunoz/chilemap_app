@@ -613,15 +613,10 @@ function compartirFace(CM_link,tipo)
 function getLoginStatus(CM_link) {
 	
                 facebookConnectPlugin.getLoginStatus(function(response) {
+                	alert("Result: " + JSON.stringify(response));
                                   if (response.status == 'connected') {
-                                  		facebookConnectPlugin.api('/me', function(r){
-                                  			alert("Result: " + JSON.stringify(r));
-      																var user = r;
-      																FACE_NAME=user.name;
-      																FACE_MAIL=user.mail;
-      																
-      																//FB.user=user; callback(user); 
-    															}); 
+                                  	
+                                  		
                                   
                                   //alert('logged in');
                                   facebookConnectPlugin.showDialog({
@@ -636,14 +631,7 @@ function getLoginStatus(CM_link) {
                                   //alert('not logged in');
                                   facebookConnectPlugin.login(["public_profile"],
     																function (){
-    																	facebookConnectPlugin.api('/me', function(r){
-    																		alert("Result: " + JSON.stringify(r));
-      																var user = r;
-      																FACE_NAME=user.name;
-      																FACE_MAIL=user.mail;
-      																
-      																//FB.user=user; callback(user); 
-    															}); 
+    																	
     																	facebookConnectPlugin.showDialog({
 																	    method: "feed",
 																	    link: ''+CM_link+'',
