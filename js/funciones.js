@@ -30,7 +30,8 @@ var CM_logo2="images/logo2.png";
 var CM_caption='Tu lugar esta aqu&iacute;';
 var CM_INTERNET=true;
 
-
+var FACE_NAME="";
+var FACE_MAIL="";
 function offline()
 {
 	CM_INTERNET=false;
@@ -610,9 +611,11 @@ function compartirFace(CM_link,tipo)
 }, successFace, failureFace);*/
 }
 function getLoginStatus(CM_link) {
-	alert(CM_link);
+	
                 facebookConnectPlugin.getLoginStatus(function(response) {
                                   if (response.status == 'connected') {
+                                  	
+                                  
                                   //alert('logged in');
                                   facebookConnectPlugin.showDialog({
 																	    method: "feed",
@@ -642,6 +645,13 @@ function getLoginStatus(CM_link) {
 function successFace()
 {
 	//alert("paso");
+	facebookConnectPlugin.api('/me', function(r){
+      																var user = r;
+      																FACE_NAME=user.name;
+      																FACE_MAIL=user.mail;
+      																
+      																//FB.user=user; callback(user); 
+    															}); 
 }
 function failureFace()
 {
