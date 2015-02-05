@@ -617,8 +617,8 @@ function getLoginStatus(CM_link) {
                                   if (response.status == 'connected') {
                                   	
                                   		
-                                  alert(response.authResponse.userID);
-                                  facebookConnectPlugin.api(response.authResponse.userID+"/",
+//                                  alert(response.authResponse.userID);
+                                  facebookConnectPlugin.api("/me",{ fields: 'id, name' },
     															function (result) {
     															    alert("Result: " + JSON.stringify(result));
     															    /* alerts:
