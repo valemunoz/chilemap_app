@@ -627,7 +627,7 @@ function successFace()
 function failureFace()
 {
 	alert("NO paso");
-	facebookConnectPlugin.login(["basic_info"],
+	facebookConnectPlugin.login(["public_profile"],
     fbLoginSuccess,
     function (error) { alert("" + error) }
 );
