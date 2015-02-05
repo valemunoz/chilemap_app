@@ -597,8 +597,8 @@ function compartirFace(CM_link,tipo)
 	{
 		CM_link=CM_path_completo+"?lon="+SIS_LON+"&lat="+SIS_LAT;
 	}
-  	var loginFace=getLoginStatus();
-  	alert(loginFace);
+  	getLoginStatus(CM_link);
+  	
    
   /* facebookConnectPlugin.showDialog({
     method: "feed",
@@ -608,14 +608,31 @@ function compartirFace(CM_link,tipo)
       description: 'Revisa este link!'  
 }, successFace, failureFace);*/
 }
-function getLoginStatus() {
+function getLoginStatus(CM_link) {
                 facebookConnectPlugin.getLoginStatus(function(response) {
                                   if (response.status == 'connected') {
-                                  alert('logged in');
-                                  return true;
+                                  //alert('logged in');
+                                  facebookConnectPlugin.showDialog({
+																	    method: "feed",
+																	    link: ''+CM_link+'',
+																	     picture: ""+CM_path+"/"+CM_logo2+"",
+																	      caption: CM_caption,
+																	      description: 'Revisa este link!'  
+																	}, successFace, failureFace);
+                                  
                                   } else {
-                                  alert('not logged in');
-                                  return false;
+                                  //alert('not logged in');
+                                  facebookConnectPlugin.login(["public_profile"],
+    																function (){facebookConnectPlugin.showDialog({
+																	    method: "feed",
+																	    link: ''+CM_link+'',
+																	     picture: ""+CM_path+"/"+CM_logo2+"",
+																	      caption: CM_caption,
+																	      description: 'Revisa este link!'  
+																	}, successFace, failureFace);},
+    																function (error) { /*alert("" + error)*/ }
+																	);
+                                  
                                   }
                                   });
  }
@@ -627,10 +644,7 @@ function successFace()
 function failureFace()
 {
 	//alert("NO paso");
-	facebookConnectPlugin.login(["public_profile"],
-    fbLoginSuccess,
-    function (error) { /*alert("" + error)*/ }
-);
+	
 }
 function loadRecupera()
 {
