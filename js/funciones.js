@@ -73,10 +73,7 @@ function deviceListo()
 						$.mobile.loading( 'hide');	
 						navigator.splashscreen.hide();	
 
-facebookConnectPlugin.login(["basic_info"],
-    fbLoginSuccess,
-    function (error) { alert("" + error) }
-);
+
 			
 					}
 			);
@@ -620,7 +617,7 @@ function compartirFace(CM_link,tipo)
     method: "feed",
     link: ''+CM_link+'',
     caption: CM_caption
-}, successFace, failureFace)
+}, successFace, failureFace);
 }
 
 function successFace()
@@ -630,6 +627,10 @@ function successFace()
 function failureFace()
 {
 	alert("NO paso");
+	facebookConnectPlugin.login(["basic_info"],
+    fbLoginSuccess,
+    function (error) { alert("" + error) }
+);
 }
 function loadRecupera()
 {
