@@ -610,6 +610,14 @@ function compartirFace(CM_link,tipo)
       caption: CM_caption,
       description: 'Revisa este link!'       
    });*/
+   facebookConnectPlugin.browserInit('171716159685522');
+			facebookConnectPlugin.login(
+    ["publish_stream"], 
+    fbLoginSuccess, 
+    function (error) { 
+        alert("" + error);
+    }
+		);
    
    facebookConnectPlugin.showDialog({
     method: "feed",
