@@ -310,7 +310,7 @@
  			<div id=output></div>
  			<script>
  			
-	window.fbAsyncInit = function() {
+	/*window.fbAsyncInit = function() {
     // init the FB JS SDK
     FB.init({
       appId      : '171716159685522',                        // App ID from the app dashboard
@@ -333,7 +333,16 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
   
+*/
 
+			facebookConnectPlugin.browserInit('171716159685522');
+			facebookConnectPlugin.login(
+    ["publish_stream"], 
+    fbLoginSuccess, 
+    function (error) { 
+        alert("" + error);
+    }
+);
   
 	</script>
 <script>

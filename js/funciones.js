@@ -77,14 +77,7 @@ function deviceListo()
 					}
 			);
 			
-			facebookConnectPlugin.browserInit('171716159685522');
-			facebookConnectPlugin.login(
-    ["publish_stream"], 
-    fbLoginSuccess, 
-    function (error) { 
-        alert("" + error);
-    }
-);
+
 
 			loadServiciosPanel();
 			
