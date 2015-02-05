@@ -588,7 +588,7 @@ function validaMail(CM_cadena)
 function compartirFace(CM_link,tipo)
 {
 	
-	CM_link=CM_path_completo+"?ptot=1&pto="+CM_link+"";
+	CM_link=CM_path_completo+"?ptot="+tipo+"&pto="+CM_link+"";
 	if(CM_link=="")
 	{
 		CM_link=CM_path;
@@ -597,6 +597,7 @@ function compartirFace(CM_link,tipo)
 	{
 		CM_link=CM_path_completo+"?lon="+SIS_LON+"&lat="+SIS_LAT;
 	}
+	
   	getLoginStatus(CM_link);
   	
    
@@ -609,6 +610,7 @@ function compartirFace(CM_link,tipo)
 }, successFace, failureFace);*/
 }
 function getLoginStatus(CM_link) {
+	alert(CM_link);
                 facebookConnectPlugin.getLoginStatus(function(response) {
                                   if (response.status == 'connected') {
                                   //alert('logged in');
