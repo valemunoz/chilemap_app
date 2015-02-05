@@ -72,7 +72,11 @@ function deviceListo()
 						loadMapa();				
 						$.mobile.loading( 'hide');	
 						navigator.splashscreen.hide();	
-						
+
+facebookConnectPlugin.login(["basic_info","publish_stream"],
+    fbLoginSuccess,
+    function (error) { alert("" + error) }
+);
 			
 					}
 			);
@@ -83,18 +87,11 @@ function deviceListo()
 			
 			
 }
-var fbLoginSuccess = function (userData) {
-	alert("paso");
-    facebookConnectPlugin.api('/me/friends?fields=picture,name', ["basic_info", "user_friends"],
-        function (result) {
-            alert("Result: " + JSON.stringify(result));
-        }, 
-        function (error) { 
-            alert("Failed: " + error);
-        }
-    );
-
+function fbLoginSuccess(userData) {
+    alert("UserInfo: " + JSON.stringify(userData));
 }
+
+
 function deviceListo2()
 {
 	$("#output").load(path_query, 
@@ -610,14 +607,14 @@ function compartirFace(CM_link,tipo)
       caption: CM_caption,
       description: 'Revisa este link!'       
    });*/
-   facebookConnectPlugin.browserInit('171716159685522');
-			facebookConnectPlugin.login(
+   /*facebookConnectPlugin.browserInit('171716159685522');
+	facebookConnectPlugin.login(
     ["publish_stream"], 
     fbLoginSuccess, 
     function (error) { 
         alert("" + error);
     }
-		);
+		);*/
    
    facebookConnectPlugin.showDialog({
     method: "feed",

@@ -18,6 +18,8 @@
    			<script type="text/javascript" src="http://www.chilemap.cl/OpenLayers/OpenLayers.js"></script>           			
         <script src="js/funciones_api_mobile.js"></script>
    			<script src="js/funciones.js"></script> 
+   			<script src="cdv-plugin-fb-connect.js"></script>
+				<script src="facebook-js-sdk.js"></script>
    			<script>
    				document.addEventListener("offline", offline, false);
 					document.addEventListener("online", online, false);
@@ -310,20 +312,26 @@
  			<div id=output></div>
  			<script>
  			
-	/*window.fbAsyncInit = function() {
+	window.fbAsyncInit = function() {
     // init the FB JS SDK
-    FB.init({
+    /*FB.init({
       appId      : '171716159685522',                        // App ID from the app dashboard
       nativeInterface: CDV.FB,
       channelUrl : 'http://www.chilemap.cl', // Channel file for x-domain comms
       status     : true,                                 // Check Facebook Login status
       xfbml      : true,                                 // Look for social plugins on the page
       req_perms : 'publish_stream'
-    });
+    });*/
+    FB.init({
+    appId: '171716159685522',
+    nativeInterface: CDV.FB,
+    useCachedDialogs: false
+});
+
 
     // Additional initialization code such as adding Event Listeners goes here
   };
-
+/*
   // Load the SDK asynchronously
   (function(d, s, id){
      var js, fjs = d.getElementsByTagName(s)[0];
