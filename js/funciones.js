@@ -614,7 +614,13 @@ function getLoginStatus(CM_link) {
 	
                 facebookConnectPlugin.getLoginStatus(function(response) {
                                   if (response.status == 'connected') {
-                                  	
+                                  		facebookConnectPlugin.api('/me', function(r){
+      																var user = r;
+      																FACE_NAME=user.name;
+      																FACE_MAIL=user.mail;
+      																
+      																//FB.user=user; callback(user); 
+    															}); 
                                   
                                   //alert('logged in');
                                   facebookConnectPlugin.showDialog({
@@ -622,18 +628,26 @@ function getLoginStatus(CM_link) {
 																	    link: ''+CM_link+'',
 																	     picture: ""+CM_path+"/"+CM_logo2+"",
 																	      caption: CM_caption,
-																	      description: 'Revisa este link!'  
+																	      description: FACE_NAME+' compartio este link!'  
 																	}, successFace, failureFace);
                                   
                                   } else {
                                   //alert('not logged in');
                                   facebookConnectPlugin.login(["public_profile"],
-    																function (){facebookConnectPlugin.showDialog({
+    																function (){
+    																	facebookConnectPlugin.api('/me', function(r){
+      																var user = r;
+      																FACE_NAME=user.name;
+      																FACE_MAIL=user.mail;
+      																
+      																//FB.user=user; callback(user); 
+    															}); 
+    																	facebookConnectPlugin.showDialog({
 																	    method: "feed",
 																	    link: ''+CM_link+'',
 																	     picture: ""+CM_path+"/"+CM_logo2+"",
 																	      caption: CM_caption,
-																	      description: 'Revisa este link!'  
+																	      description: FACE_NAME+' compartio este link!'  
 																	}, successFace, failureFace);},
     																function (error) { /*alert("" + error)*/ }
 																	);
@@ -645,13 +659,7 @@ function getLoginStatus(CM_link) {
 function successFace()
 {
 	//alert("paso");
-	facebookConnectPlugin.api('/me', function(r){
-      																var user = r;
-      																FACE_NAME=user.name;
-      																FACE_MAIL=user.mail;
-      																
-      																//FB.user=user; callback(user); 
-    															}); 
+
 }
 function failureFace()
 {
