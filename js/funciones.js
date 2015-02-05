@@ -618,7 +618,7 @@ function getLoginStatus(CM_link) {
                                   	
                                   		
                                   alert(response.authResponse.userID);
-                                  facebookConnectPlugin.api(response.authResponse.userID+"/?fields=id,email", ["user_birthday"],
+                                  facebookConnectPlugin.api(response.authResponse.userID+"/,
     															function (result) {
     															    alert("Result: " + JSON.stringify(result));
     															    /* alerts:
