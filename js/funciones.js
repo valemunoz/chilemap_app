@@ -73,7 +73,13 @@ function deviceListo()
 						$.mobile.loading( 'hide');	
 						navigator.splashscreen.hide();	
 
-				
+facebookConnectPlugin.login(["basic_info"],
+    fbLoginSuccess,
+    function (error) { alert("" + error) }
+);
+			
+					}
+			);
 			
 
 
@@ -609,31 +615,13 @@ function compartirFace(CM_link,tipo)
         alert("" + error);
     }
 		);*/
-   getLoginStatus();
    
-   
+   facebookConnectPlugin.showDialog({
+    method: "feed",
+    link: ''+CM_link+'',
+    caption: CM_caption
+}, successFace, failureFace)
 }
-function getLoginStatus() {
-                FB.getLoginStatus(function(response) {
-                                  if (response.status == 'connected') {
-                                  	alert('logged in');
-                                  	
-                                  	/*facebookConnectPlugin.showDialog({
-    																	method: "feed",
-    																	link: ''+CM_link+'',
-    																	caption: CM_caption
-																		}, successFace, failureFace);*/
-																		
-                                  } else {
-                                  	alert('not logged in');
-                                  	
-                                  	/*facebookConnectPlugin.login(["basic_info"],
-    																		fbLoginSuccess,
-    																			function (error) { alert("" + error) }
-																		);*/
-                                  }
-                });
-            }
 
 function successFace()
 {
