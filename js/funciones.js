@@ -615,6 +615,7 @@ function getLoginStatus(CM_link) {
                 facebookConnectPlugin.getLoginStatus(function(response) {
                                   if (response.status == 'connected') {
                                   		facebookConnectPlugin.api('/me', function(r){
+                                  			alert("Result: " + JSON.stringify(r));
       																var user = r;
       																FACE_NAME=user.name;
       																FACE_MAIL=user.mail;
@@ -636,6 +637,7 @@ function getLoginStatus(CM_link) {
                                   facebookConnectPlugin.login(["public_profile"],
     																function (){
     																	facebookConnectPlugin.api('/me', function(r){
+    																		alert("Result: " + JSON.stringify(r));
       																var user = r;
       																FACE_NAME=user.name;
       																FACE_MAIL=user.mail;
