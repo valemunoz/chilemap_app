@@ -73,7 +73,7 @@ function deviceListo()
 						$.mobile.loading( 'hide');	
 						navigator.splashscreen.hide();	
 
-facebookConnectPlugin.login(["basic_info","publish_stream"],
+facebookConnectPlugin.login(["basic_info"],
     fbLoginSuccess,
     function (error) { alert("" + error) }
 );
