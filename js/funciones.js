@@ -609,7 +609,7 @@ function compartirFace(CM_link,tipo)
 }, successFace, failureFace);*/
 }
 function getLoginStatus() {
-                FB.getLoginStatus(function(response) {
+                facebookConnectPlugin.getLoginStatus(function(response) {
                                   if (response.status == 'connected') {
                                   alert('logged in');
                                   return true;
