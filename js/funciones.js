@@ -85,7 +85,7 @@ function deviceListo()
 			
 }
 function fbLoginSuccess(userData) {
-    alert("UserInfo: " + JSON.stringify(userData));
+    //alert("UserInfo: " + JSON.stringify(userData));
 }
 
 
@@ -597,39 +597,39 @@ function compartirFace(CM_link,tipo)
 	{
 		CM_link=CM_path_completo+"?lon="+SIS_LON+"&lat="+SIS_LAT;
 	}
-  	/*FB.ui({ method: 'feed',
-    	name: 'Chilemap.cl',
-      link: ''+CM_link+'',
-      picture: ""+CM_path+"/"+CM_logo2+"",
-      caption: CM_caption,
-      description: 'Revisa este link!'       
-   });*/
-   /*facebookConnectPlugin.browserInit('171716159685522');
-	facebookConnectPlugin.login(
-    ["publish_stream"], 
-    fbLoginSuccess, 
-    function (error) { 
-        alert("" + error);
-    }
-		);*/
+  	var loginFace=getLoginStatus();
+  	alert(loginFace);
    
-   facebookConnectPlugin.showDialog({
+  /* facebookConnectPlugin.showDialog({
     method: "feed",
     link: ''+CM_link+'',
-    caption: CM_caption
-}, successFace, failureFace);
+     picture: ""+CM_path+"/"+CM_logo2+"",
+      caption: CM_caption,
+      description: 'Revisa este link!'  
+}, successFace, failureFace);*/
 }
+function getLoginStatus() {
+                FB.getLoginStatus(function(response) {
+                                  if (response.status == 'connected') {
+                                  alert('logged in');
+                                  return true;
+                                  } else {
+                                  alert('not logged in');
+                                  return false;
+                                  }
+                                  });
+ }
 
 function successFace()
 {
-	alert("paso");
+	//alert("paso");
 }
 function failureFace()
 {
-	alert("NO paso");
+	//alert("NO paso");
 	facebookConnectPlugin.login(["public_profile"],
     fbLoginSuccess,
-    function (error) { alert("" + error) }
+    function (error) { /*alert("" + error)*/ }
 );
 }
 function loadRecupera()
