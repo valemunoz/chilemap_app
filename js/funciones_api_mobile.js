@@ -269,9 +269,9 @@ function onSelectFeatureFunction(feature)
                         
                      
                     }
-                    $( "#myPopup" ).html("<p>"+ datas+"</p>" );
-                  $("#myPopup").popup("close");
-                  $("#myPopup").popup("open");
+                    $( "#cont_static" ).html("<p>"+ datas+"</p>" );
+                  $("#myPopup_static").popup("close");
+                  $("#myPopup_static").popup("open");
             	      
             	
         
@@ -658,6 +658,7 @@ function deleteTransantiago()
 		//sprintersLayer.redraw();
 		  
 	}catch(e){}
+		
 }
 
 

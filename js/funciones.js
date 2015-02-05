@@ -50,9 +50,10 @@ function online()
 	//deviceListo();
 	
 }
+
 function deviceListo()
 {
-	
+			 				
 	$.mobile.loading( 'show', {
 			text: 'Cargando...',
 			textVisible: true,
@@ -230,6 +231,7 @@ function hideMensaje(div)
 
 function limpiarMapa()
 {
+	
 	limpiarPuntosDrag();
 	deleteTransantiago();
 	deleteServicioMapaPagos(100);
@@ -241,11 +243,12 @@ function limpiarMapa()
 				deleteServicioMapa(i);
 			}
 			
-						for(i=0;i<CM_servicios_pago.length;i++)
+			for(i=0;i<CM_servicios_pago.length;i++)
 			{
 		
 				deleteServicioMapaPagos(i);
 			}
+			
 }
 
 
@@ -587,16 +590,29 @@ function compartirFace(CM_link,tipo)
 	{
 		CM_link=CM_path_completo+"?lon="+SIS_LON+"&lat="+SIS_LAT;
 	}
-  	FB.ui({ method: 'feed',
+  	/*FB.ui({ method: 'feed',
     	name: 'Chilemap.cl',
       link: ''+CM_link+'',
       picture: ""+CM_path+"/"+CM_logo2+"",
       caption: CM_caption,
       description: 'Revisa este link!'       
-   });
+   });*/
+   
+   facebookConnectPlugin.showDialog({
+    method: "feed",
+    link: ''+CM_link+'',
+    caption: CM_caption
+}, successFace, failureFace)
 }
 
-
+function successFace()
+{
+	alert("paso");
+}
+function failureFace()
+{
+	alert("NO paso");
+}
 function loadRecupera()
 {
 			

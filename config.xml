@@ -56,6 +56,10 @@
     <gap:plugin name="org.apache.cordova.splashscreen" />
 		<gap:plugin name="org.apache.cordova.network-information" />
 		<gap:plugin name="org.apache.cordova.geolocation" />
+		 <gap:plugin name="com.phonegap.plugins.facebookconnect" version="0.3.2">
+        <param name="APP_ID" value="171716159685522" />
+        <param name="APP_NAME" value="chilemap" />
+    </gap:plugin>
 		<!--gap:plugin name="org.apache.cordova.file"/>
 		<gap:plugin name="org.apache.cordova.file-transfer"/-->
     <feature name="http://api.phonegap.com/1.0/geolocation"/>
