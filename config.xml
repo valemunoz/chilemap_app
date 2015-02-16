@@ -105,24 +105,7 @@
     <icon src="res/icon/ios/icon-72.png" gap:platform="ios" width="72" height="72" />
     <icon src="res/icon/ios/icon-114.png" gap:platform="ios" width="114" height="114" />
     <icon src="res/icon/ios/icon-144.png" gap:platform="ios" width="144" height="144" />
-    <!-- iPhone 6 / 6+ -->
-<icon src="res/icon/ios/icon-180.png" gap:platform="ios" width="180" height="180" />
-
-<!-- iPhone / iPod Touch  -->
-<icon src="res/icon/ios/icon-60.png" gap:platform="ios" width="60" height="60" />
-<icon src="res/icon/ios/icon-120.png" gap:platform="ios" width="120" height="120" />
-
-<!-- iPad -->
-<icon src="res/icon/ios/icon-76.png" gap:platform="ios" width="76" height="76" />
-<icon src="res/icon/ios/icon-152.png" gap:platform="ios" width="152" height="152" />
-
-<!-- Settings Icon -->
-<icon src="res/icon/ios/icon-29.png" gap:platform="ios" width="29" height="29" />
-<icon src="res/icon/ios/icon-58.png" gap:platform="ios" width="58" height="58" />
-
-<!-- Spotlight Icon -->
-<icon src="res/icon/ios/icon-40.png" gap:platform="ios" width="40" height="40" />
-<icon src="res/icon/ios/icon-80.png" gap:platform="ios" width="80" height="80" />
+    
 		
             
      
