@@ -476,7 +476,7 @@ function addFavorito(cm_estadoSesion,CM_id_data,CM_tipo_data)
 	
 	if(cm_estadoSesion==0)
 	{
-		$.mobile.loading( 'hide');
+		hideMensaje("myPopup_static");
 		$("#output").load(path_query, 
 			{tipo:19, id:CM_id_data, tipo_data:CM_tipo_data} 
 				,function(){	
