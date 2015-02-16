@@ -50,7 +50,7 @@ function init() {
     map.setCenter(new OpenLayers.LonLat(-70.656235,-33.458943).transform(
         new OpenLayers.Projection("EPSG:4326"), // de WGS 1984
         new OpenLayers.Projection("EPSG:900913") // a Proyección Esférica Mercator
-      ), 15);
+      ), 10);
     map.events.register("moveend", null, loadMovimiento);  
       
       /*Marcadores*/
